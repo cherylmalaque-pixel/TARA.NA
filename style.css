@@ -1,0 +1,338 @@
+:root {
+  color-scheme: light;
+  --paper: #f5eee4;
+  --card: #fffdf9;
+  --ink: #292b27;
+  --muted: #77786f;
+  --orange: #e46c45;
+  --orange-dark: #c95431;
+  --line: #e9e1d6;
+  font-family: "DM Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(232, 183, 142, 0.26), transparent 30%),
+    radial-gradient(ellipse at 88% 82%, rgba(174, 193, 159, 0.24), transparent 32%),
+    var(--paper);
+}
+
+button {
+  font: inherit;
+}
+
+.invitation {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 38px 20px 24px;
+}
+
+.topline,
+.footer-note {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: center;
+}
+
+.topline {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+
+.sparkle {
+  color: var(--orange);
+  font-size: 15px;
+}
+
+.invite-card {
+  position: relative;
+  width: min(100%, 470px);
+  overflow: hidden;
+  padding: 48px 48px 36px;
+  border: 1px solid rgba(120, 99, 73, 0.1);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 24px 70px rgba(80, 57, 34, 0.11), 0 3px 12px rgba(80, 57, 34, 0.05);
+  text-align: center;
+  animation: card-arrives 650ms cubic-bezier(0.2, 0.75, 0.3, 1) both;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--orange-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(52px, 13vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.99;
+}
+
+.invite-copy {
+  max-width: 320px;
+  margin: 21px auto 26px;
+  color: #66675f;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.invite-copy strong {
+  color: var(--ink);
+}
+
+.event-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.detail-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--orange-dark);
+  background: #faeee7;
+  font-size: 24px;
+}
+
+.detail-label {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.detail-value {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.safe-note {
+  margin: 13px 0 25px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+}
+
+.choice-button {
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+
+.choice-button:focus-visible {
+  outline: 3px solid rgba(228, 108, 69, 0.38);
+  outline-offset: 3px;
+}
+
+.yes-button {
+  min-width: 176px;
+  color: #fff;
+  background: var(--orange);
+}
+
+.yes-button:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+}
+
+.yes-button span {
+  margin-left: 9px;
+}
+
+.no-button {
+  min-width: 88px;
+  color: #55564f;
+  border-color: var(--line);
+  background: transparent;
+}
+
+.no-button:hover {
+  border-color: #d7cfc4;
+  background: #f8f5ef;
+}
+
+.choice-button:disabled {
+  cursor: default;
+  opacity: 0.72;
+  transform: none;
+}
+
+.date-picker {
+  display: grid;
+  justify-items: stretch;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.date-picker[hidden] {
+  display: none;
+}
+
+.form-field {
+  display: grid;
+  gap: 7px;
+  text-align: left;
+}
+
+.form-field label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.form-field input:focus-visible,
+.form-field select:focus-visible {
+  outline: 3px solid rgba(228, 108, 69, 0.3);
+  outline-offset: 2px;
+}
+
+.confirm-button {
+  justify-self: center;
+  min-width: 190px;
+}
+
+.response {
+  min-height: 21px;
+  margin: 15px 0 0;
+  color: var(--orange-dark);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.decoration-top,
+.decoration-bottom {
+  position: absolute;
+  color: #ead7c4;
+  font-size: 20px;
+}
+
+.decoration-top {
+  top: 17px;
+  right: 20px;
+}
+
+.decoration-bottom {
+  bottom: 12px;
+  left: 18px;
+  font-size: 13px;
+}
+
+.footer-note {
+  margin-top: 21px;
+  font-size: 9px;
+}
+
+.no-button.reconsider {
+  animation: reconsider 340ms ease;
+}
+
+.invite-card.accepted h1 {
+  color: var(--orange-dark);
+}
+
+@keyframes card-arrives {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reconsider {
+  25% { transform: translateX(-5px) rotate(-2deg); }
+  50% { transform: translateX(5px) rotate(2deg); }
+  75% { transform: translateX(-3px); }
+}
+
+@media (max-width: 520px) {
+  .invitation {
+    padding: 24px 16px 18px;
+  }
+
+  .invite-card {
+    padding: 42px 23px 34px;
+  }
+
+  .detail-value {
+    font-size: 12px;
+  }
+
+  .choices {
+    gap: 8px;
+  }
+
+  .yes-button {
+    min-width: 156px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

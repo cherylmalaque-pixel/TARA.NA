@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5eee4">
+  <meta name="description" content="Isang imbitasyon para sa inuman at kuwentuhan.">
+  <title>Tara, inom tayo?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js" defer></script>
+</head>
+<body>
+  <main class="invitation" aria-labelledby="invitation-title">
+    <div class="topline"><span class="sparkle" aria-hidden="true">✳</span> ISANG PAANYAYA MULA kay Pogi na Gerald</div>
+
+    <section class="invite-card">
+      <div class="card-decoration decoration-top" aria-hidden="true">✳</div>
+      <p class="eyebrow">May lakad tayo?</p>
+      <h1 id="invitation-title">Tara, inom<br>tayo?</h1>
+      <p class="invite-copy">Magkuwentuhan tayo at magsaya. Ikaw na bahala sa pag-uwi—<strong>pero libre mo, ha?</strong></p>
+
+      <div class="event-details" aria-label="Detalye ng lakad">
+        <div class="detail-icon" aria-hidden="true">◷</div>
+        <div>
+          <span class="detail-label">KAILAN</span>
+          <p class="detail-value" id="event-details">Ikaw ang pipili ng petsa · 7:00 PM</p>
+        </div>
+      </div>
+
+      <p class="safe-note">Safe ride pauwi, ha—huwag magmaneho pagkatapos uminom.</p>
+
+      <div class="choices" role="group" aria-label="Sagot sa imbitasyon">
+        <button class="choice-button yes-button" id="yes-button" type="button">Yes, game! <span aria-hidden="true">↗</span></button>
+        <button class="choice-button no-button" id="no-button" type="button">No</button>
+      </div>
+      <form class="date-picker" id="date-picker" hidden>
+        <div class="form-field">
+          <label for="event-date">Pumili ng petsa</label>
+          <input id="event-date" name="event-date" type="date" required>
+        </div>
+        <div class="form-field">
+          <label for="drink-choice">Ano ang gusto mong inumin?</label>
+          <select id="drink-choice" name="drink-choice" required>
+            <option value="">Pumili ng inumin</option>
+            <option>Gin</option>
+            <option>Club</option>
+            <option>Alfonso</option>
+            <option>Empe</option>
+            <option value="other">Iba pa</option>
+          </select>
+        </div>
+        <div class="form-field" id="other-drink-field" hidden>
+          <label for="other-drink">Anong inumin?</label>
+          <input id="other-drink" name="other-drink" type="text" maxlength="40" placeholder="Ilagay ang gusto mong inumin">
+        </div>
+        <div class="form-field">
+          <label for="venue-choice">Saan tayo?</label>
+          <select id="venue-choice" name="venue-choice" required>
+            <option value="">Pumili ng lugar</option>
+            <option>Bahay</option>
+            <option>Sa inyo</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="food-choice">Anong pulutan?</label>
+          <select id="food-choice" name="food-choice">
+            <option>Ikaw bahala</option>
+            <option>Pulutan</option>
+            <option>Snacks</option>
+            <option>Dinner</option>
+            <option>Wala muna</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="extra-note">Iba pang gusto o request (optional)</label>
+          <input id="extra-note" name="extra-note" type="text" maxlength="100" placeholder="May iba ka pa bang gusto?">
+        </div>
+        <button class="choice-button yes-button confirm-button" type="submit" disabled>Confirm plans <span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="response" id="response" role="status" aria-live="polite"></p>
+      <div class="card-decoration decoration-bottom" aria-hidden="true">✳</div>
+    </section>
+
+    <footer class="footer-note">FROM GERALD CANOY · MAGANDANG GABI, MAS MASAYANG KUWENTUHAN</footer>
+  </main>
+</body>
+</html>
